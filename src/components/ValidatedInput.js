@@ -1,24 +1,29 @@
 import React from 'react';
-import '../styles/ValidatedInput.scss';
+import RegexUtil from '../utils/RegexUtil';
+import styles from '../styles/ValidatedInput.scss';
+import classNames from 'classnames/bind';
+const cx = classNames.bind(styles);
 const ValidatedInput = (props) => {
     let inputRef;
         return(
             <div
-                className='container'
+                className={cx('container')}
                 onClick={() => inputRef.focus()}
             >
                 <p
-                    className="placeholder"
+                    className={cx('placeholder')}
                 >{props.placeholder}</p>
                 <input
-                    className="inputfield"
+                    className={cx('inputfield')}
                     onChange={props.onChange}
+                    name={props.name}
                     ref={ref => inputRef = ref}
+                    value={props.value}
                     {...props}
                 />
                 <p
-                    className="error"
-                >{props.error}</p>
+                    className={cx('error')}
+                >{RegexUtil(props.name, props.value)}</p>
             </div>
         )
 }
