@@ -1,3 +1,4 @@
+@import 'utils';
 .button {
     border-radius: 3px;
     cursor: pointer;
@@ -10,6 +11,22 @@
         opacity: 0.7;
     }
     &:active {
-        border-color: red;
+        border-color: $oc-gray-0;
+    }
+    &.black {
+        background: linear-gradient(to right bottom, $oc-gray-9, $oc-gray-8);
+        color: $oc-gray-0;
+    }
+    &.blue {
+        background: linear-gradient(to right bottom, $oc-blue-9, $oc-blue-8);
+        color: $oc-gray-0;
+    }
+    &.green {
+        background: linear-gradient(to right bottom, $oc-green-9, $oc-green-8);
+        color: $oc-gray-0;
+    }
+    &.red {
+        background: linear-gradient(to right bottom, $oc-red-9, $oc-red-8);
+        color: $oc-gray-0;
     }
 }
