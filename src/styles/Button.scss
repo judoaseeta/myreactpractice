@@ -1,0 +1,15 @@
+.button {
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    outline: none;
+    padding: 0.5em;
+    transition: all .2s ease-in;
+    &:hover {
+        opacity: 0.7;
+    }
+    &:active {
+        border-color: red;
+    }
+}
