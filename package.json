@@ -12,6 +12,7 @@
     "babel-runtime": "6.26.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
+    "classnames": "^2.2.5",
     "css-loader": "0.28.4",
     "dotenv": "4.0.0",
     "eslint": "4.4.1",
@@ -25,14 +26,26 @@
     "file-loader": "0.11.2",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
+    "include-media": "^1.4.9",
     "jest": "20.0.4",
     "object-assign": "4.1.1",
+    "open-color": "^1.5.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.6",
     "promise": "8.0.1",
     "react": "^16.0.0",
     "react-dev-utils": "^4.1.0",
     "react-dom": "^16.0.0",
+    "react-motion": "^0.5.2",
+    "react-rater": "^0.4.5",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "next",
+    "react-transition-group": "^2.2.1",
+    "recompose": "^0.26.0",
+    "redux": "^3.7.2",
+    "redux-saga": "^0.16.0",
+    "reselect": "^3.0.1",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.5.9",
@@ -41,7 +54,17 @@
     "webpack-manifest-plugin": "1.2.1",
     "whatwg-fetch": "2.0.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
+    "jest-environment-jsdom-11.0.0": "^20.0.9",
+    "jsdom": "^11.3.0",
+    "jsdom-global": "^3.0.2",
+    "node-sass": "^4.5.3",
+    "react-test-renderer": "^16.0.0",
+    "redux-saga-test-plan": "^3.2.0",
+    "sass-loader": "^6.0.6"
+  },
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
@@ -52,14 +75,18 @@
       "src/**/*.{js,jsx}"
     ],
     "setupFiles": [
-      "<rootDir>/config/polyfills.js"
+      "<rootDir>/config/polyfills.js",
+      "<rootDir>/src/testing/jsdom.js",
+      "<rootDir>/src/testing/adaptor.js",
+      "<rootDir>/src/testing/shim.js"
     ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
     ],
-    "testEnvironment": "node",
+    "testEnvironment": "jest-environment-jsdom-11.0.0",
     "testURL": "http://localhost",
+    "timers": "fake",
     "transform": {
       "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
