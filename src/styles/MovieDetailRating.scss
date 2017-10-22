@@ -1,0 +1,23 @@
+@import 'utils';
+.container {
+    @include moviedetail_con();
+    h5 {
+        margin-bottom: 0.2em;
+    }
+    p {
+        font-size: 15px;
+        margin-bottom: 0.2em;
+    }
+    span {
+        font-size: 25px;
+    }
+    #tomato {
+        color: $oc-red-9;  
+    }
+    #imdb {
+        color: $oc-yellow-9;  
+    }
+    #metac {
+        color: $oc-green-9;
+    }
+}

@@ -8,6 +8,7 @@ const Button = (
         isBlack,
         isBlue, 
         isGreen,
+        isLime,
         isRed, 
         onClick, 
         styles, 
@@ -19,6 +20,7 @@ const Button = (
             black: isBlack,
             blue: isBlue,
             green: isGreen,
+            lime: isLime,
             red: isRed
         })}
         onClick={onClick ? onClick : null}
