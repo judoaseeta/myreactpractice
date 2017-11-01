@@ -1,0 +1,12 @@
+@import 'NavBarItem';
+.item_expanded {
+    position: absolute;
+    top: 100%;
+    left:0;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+.item_not_expanded {
+    display: none;
+}

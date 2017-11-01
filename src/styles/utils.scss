@@ -1,0 +1,8 @@
+@import '~open-color/open-color';
+@import '~include-media/dist/include-media';
+@mixin moviedetail_con() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+$image1: 'https://firebasestorage.googleapis.com/v0/b/moviefetch2.appspot.com/o/night-television-tv-theme-machines.jpg?alt=media&token=8e7f657c-948b-4033-a2f7-ecd557e46b88';

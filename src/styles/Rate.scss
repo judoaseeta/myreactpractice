@@ -1,0 +1,23 @@
+@import 'utils';
+.rate {
+    cursor: pointer;
+    color: $oc-yellow-4;
+    position: relative;
+    &.willBeActive {
+      color: $oc-yellow-5;
+    }
+    &.isActive {
+      color: $oc-yellow-4;
+    }
+    &.isActiveHalf:before {
+      color: $oc-yellow-6;
+      content: '\2605';
+      position: absolute;
+      left: 0;
+      width: 50%;
+      overflow: hidden;
+    }
+    &.isDisabled {
+      cursor: default;
+    }
+}

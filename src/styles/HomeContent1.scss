@@ -1,0 +1,28 @@
+@import 'utils';
+.container {
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/moviefetch2.appspot.com/o/night-television-tv-theme-machines.jpg?alt=media&token=8e7f657c-948b-4033-a2f7-ecd557e46b88');
+    background-size: cover;
+    background-position: top;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content {
+    z-index:5;
+    #content1{
+        color: white;
+        font-size: 80px;
+    }
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $oc-gray-7;
+    opacity: 0.4;
+}

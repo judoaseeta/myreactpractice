@@ -1,0 +1,15 @@
+@import 'utils';
+.outer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+    height: 260px;
+    overflow-x: hidden;
+    .inner {
+        display: flex;
+        align-items: center;
+        background: transparent;
+        width: 100%;
+    }
+}

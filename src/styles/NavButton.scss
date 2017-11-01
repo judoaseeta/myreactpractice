@@ -1,0 +1,44 @@
+@import 'utils';
+.outer {
+    border: 2px solid $oc-red-9;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+    transition: all 0.4s ease-in;
+    .middle {
+        cursor: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1.5px solid $oc-pink-9;
+    }
+    .inner {
+        cursor: inherit;
+        background-color: $oc-orange-8;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid $oc-orange-8;
+    }
+    &:hover {
+        transform: scale(0.8, 0.8);
+        .middle {
+            transform: scale(0.8, 0.8);
+            border: 1.5px solid $oc-pink-7;
+        }
+        .inner {
+            background-color: $oc-orange-6;
+        }
+    }
+}

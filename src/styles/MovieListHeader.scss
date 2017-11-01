@@ -1,0 +1,30 @@
+@import 'utils';
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    h4 {
+        color: $oc-gray-0;
+        font-size: 40px;
+    }
+    h5 {
+        color: $oc-gray-0;
+        font-size: 25px;
+    }
+    .searchBar {
+        background: transparent;
+        border: none;
+        border-bottom: 0.1px solid $oc-pink-6;
+        color: $oc-gray-0;
+        display: inline-block;
+        font-size: 25px;
+        padding: 0.1em;
+        outline: none;
+        transition: all 0.3s ease-out;
+        &:focus {
+            border-bottom: 2px solid $oc-pink-6;
+            transform: scale(1.2, 1.2);
+        }
+    }
+}

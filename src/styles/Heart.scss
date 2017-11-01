@@ -1,0 +1,16 @@
+@import 'utils';
+.rater {
+    & a {
+        &.willBeActive {
+            color: $oc-red-7;
+        }
+        &.active {
+            color: $oc-red-9;
+        }
+        &.halfActive {
+            & span {
+                color: $oc-gray-8;
+            }
+        }
+    }
+}

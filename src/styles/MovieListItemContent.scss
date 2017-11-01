@@ -1,0 +1,20 @@
+@import 'utils';
+.content {
+    background: transparent;
+    div {
+        background: linear-gradient(to right bottom, $oc-gray-9, $oc-gray-8);
+        padding-left: 10px;
+        p {
+            font-size: 16px;
+            color: $oc-gray-0;
+        }
+        .seeDetail {
+            font-size: 12px;
+            cursor: pointer;
+            color: $oc-indigo-2;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }    
+}

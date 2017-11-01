@@ -1,0 +1,14 @@
+@import 'utils';
+.container {
+    background: linear-gradient(to right, $oc-lime-9, $oc-lime-8);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    align-items: center;
+    max-width: 300px;
+    max-height: 200px;
+}

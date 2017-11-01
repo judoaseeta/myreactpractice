@@ -1,0 +1,18 @@
+@import 'utils';
+.container {
+    display: flex;
+    align-items: stretch;
+    position: relative;
+}
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item_active {
+    &:after {
+        content: '';
+        bottom: 0;
+        border-bottom: 1px;
+    }
+}

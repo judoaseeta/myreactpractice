@@ -1,0 +1,22 @@
+@import 'utils';
+.container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 0.2em);
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/moviefetch2.appspot.com/o/cinema-2093264_1920.jpg?alt=media&token=dad579cd-d824-49a5-b2e6-2455435db711');
+    background-size: cover;
+    background-position: top;
+    .overlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.2);
+        .header {
+            width: 100%;
+            height: 200px;
+            z-index: 5;
+        }
+    }
+}

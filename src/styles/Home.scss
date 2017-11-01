@@ -1,0 +1,9 @@
+@import 'utils';
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100vw;
+    min-height: 100vh;
+    padding: 0.2em;
+}

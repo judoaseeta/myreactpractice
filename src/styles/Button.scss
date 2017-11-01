@@ -25,6 +25,10 @@
         background: linear-gradient(to right bottom, $oc-green-9, $oc-green-8);
         color: $oc-gray-0;
     }
+    &.lime {
+        background: linear-gradient(to right bottom, $oc-lime-7, $oc-lime-6);
+        color: $oc-orange-0;
+    }
     &.red {
         background: linear-gradient(to right bottom, $oc-red-9, $oc-red-8);
         color: $oc-gray-0;
