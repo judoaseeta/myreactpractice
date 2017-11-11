@@ -11,6 +11,52 @@ import Reviews from './Reviews';
 import styles from '../styles/MovieDetail.scss';
 import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
+const ReviewAddCompo = ({reviews, userReviewId, userUid, Title, toggleEdit}) => {
+    if(!userUid) {
+        return <div
+            className={styles.noreview}
+        >
+            <p>To write review, you need to signIn</p>
+        </div>
+    }
+    if(reviews && reviews.length > 0 && !userReviewId) {
+        return <div
+            className={styles.noUserReview}
+        >
+            <p>How about writing your first review of <br/> <span id={styles.innerTitle}>{Title}</span>?</p>
+            <span
+                id={styles.addReview}
+                onClick={() => toggleEdit()}
+            >Write your review</span>
+        </div>
+    } else if(reviews && reviews.length === 0) {
+        return <div
+            className={styles.noreview}
+        >
+            <p>There is no review yet!</p>
+            <p>How about writing the first review of <br/> <span id={styles.innerTitle}>{Title}</span>?</p>
+            <span
+                id={styles.addReview}
+                onClick={() => toggleEdit()}
+            >Write new review</span>
+        </div>
+    }
+    return null;
+}
+const ReviewCompo = ({detail, deleteReview, reviews, userReviewId, userUid, toggleEdit}) => {
+    if(reviews && reviews.length > 0 ) {
+        return (
+                <Reviews 
+                    deleteReview={deleteReview}
+                    title={detail.Title}
+                    reviews={reviews}
+                    userUid={userUid}
+                    toggleEdit={toggleEdit}
+                />
+        )
+    }
+    return null;
+}
 const MovieDetail = ({
     content, 
     detail, 
@@ -120,45 +166,21 @@ const MovieDetail = ({
                 <div
                     className={cx('reviews')}
                 >
-                    {
-                        reviews && !userReviewId 
-                        ? <div
-                            className={styles.noUserReview}
-                        >
-                            <p>How about writing your first review of <br/> <span id={styles.innerTitle}>{detail.Title}</span>?</p>
-                            <span
-                                id={styles.addReview}
-                                onClick={() => toggleEdit()}
-                            >Write your review</span>
-                        </div>
-                        : null
-                    }
-                    {
-                        reviews && reviews.length > 0 
-                        ? <Reviews 
-                            deleteReview={deleteReview}
-                            title={detail.Title}
-                            reviews={reviews}
-                            userUid={userUid}
-                            toggleEdit={toggleEdit}
-                        />
-                        : userUid
-                            ? <div
-                                className={styles.noreview}
-                            >
-                                <p>There is no review yet!</p>
-                                <p>How about writing the first review of <br/> <span id={styles.innerTitle}>{detail.Title}</span>?</p>
-                                <span
-                                    id={styles.addReview}
-                                    onClick={() => toggleEdit()}
-                                >Write new review</span>
-                            </div>
-                            : <div
-                                className={styles.noreview}
-                            >
-                                <p>To write review, you need to signIn</p>
-                            </div>
-                    }
+                    <ReviewAddCompo 
+                        reviews={reviews}
+                        userReviewId={userReviewId}
+                        userUid={userUid}
+                        toggleEdit={toggleEdit}
+                        Title={detail.Title}
+                    />
+                    <ReviewCompo 
+                        detail={detail}
+                        deleteReview={deleteReview}
+                        reviews={reviews}
+                        userReviewId={userReviewId}
+                        userUid={userUid}
+                        toggleEdit={toggleEdit}
+                    />
                 </div>
             </div>
         : null

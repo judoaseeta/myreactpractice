@@ -6,6 +6,10 @@ import classNames from 'classnames/bind';
 import theme from '../styles/Heart.scss';
 import styles from '../styles/Review.scss';
 const cx = classNames.bind(styles);
+const truncatedEmail = (email) => {
+    const indexfortrun =  email.indexOf('@');
+    return `${email.slice(0, indexfortrun - 3)}xxx${email.slice(indexfortrun, email.length)}`
+}
 const Review = ({
     createdAt,
     deleteReview,
@@ -52,7 +56,7 @@ const Review = ({
             <div>
                 <p
                     className={cx('email')}
-                >{email}</p>
+                >{truncatedEmail(email)}</p>
                 {
                     uid === userUid
                     ? <span
