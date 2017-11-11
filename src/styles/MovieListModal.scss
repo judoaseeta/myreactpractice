@@ -1,0 +1,63 @@
+@import 'utils';
+.container {
+    @include common_modal_container();
+    background: rgba($oc-gray-9, 0.8);
+    transition: all 0.2s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .inner {
+        display: none;
+        .progress {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 350px; 
+            height: 10px;
+            border: 0.2px solid $oc-gray-7;
+            background: linear-gradient(to right, $oc-gray-8, $oc-gray-6);
+            margin-bottom: 15px;
+            position: relative;
+            .inline {
+                position: absolute;
+                left:0;
+                width: 349px;
+                height: 9px;
+                width: 0%;
+                background: linear-gradient(to right, $oc-red-9, $oc-red-7);
+                animation: progress_bar 5s ease-in-out infinite;
+            }
+        }
+    }
+    &.active {
+        @include common_modal_container_active();
+        .inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }   
+    }
+}
+
+@keyframes progress_bar {
+    0% {
+        width: 0%;
+        background: $oc-red-0;
+    }
+    30% {
+        width: 30%;
+        background: $oc-blue-3;
+    }
+    60% {
+        width: 60%;
+        background: $oc-red-5;
+    }
+    90% {
+        width: 90%;
+        background: $oc-red-7;
+    }
+    100% {
+        width: 100%;
+    }
+}

@@ -10,19 +10,19 @@ const MovieDetailRating = ({imdbRating, Metascore,Ratings}) => {
             case 'Rotten Tomatoes': 
                 Tomato = {
                     Source: rating.Source,
-                    Value: rating.Value.slice(0,rating.Value.lastIndexOf('%'))
+                    Value: Number(rating.Value.slice(0,rating.Value.lastIndexOf('%')))
                 }
                 break;
             case 'Metacritic':
                 MetaCritic = {
                     Source: rating.Source,
-                    Value: rating.Value.slice(0, rating.Value.lastIndexOf('/'))
+                    Value: Number(rating.Value.slice(0, rating.Value.lastIndexOf('/')))
                 }
                 break;
             case 'Internet Movie Database':
                 IMDB = {
-                    Source: rating.Source,
-                    Value: rating.Value.slice(0, rating.Value.lastIndexOf('/'))
+                    Source: 'Imdb',
+                    Value: Number(rating.Value.slice(0, rating.Value.lastIndexOf('/')))
                 }
                 break;
             default: break;
@@ -32,11 +32,11 @@ const MovieDetailRating = ({imdbRating, Metascore,Ratings}) => {
         <div
         className={styles.container}
     >
-        <h5>Ratings</h5>
+        <h4>Ratings</h4>
         <div>
             {!IMDB
                 ?<p>
-                    ImdbRating: 
+                    Imdb: 
                     <Motion
                         defaultStyle={{ 
                             value: 0

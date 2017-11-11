@@ -1,0 +1,37 @@
+@import 'utils';
+.container {
+    @include common_modal_container();
+    color: $oc-gray-8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    .overlay {
+        @include common_overlay();
+    }
+    .form {
+        display: none;
+        background: $oc-gray-2;
+    }
+    &.active {
+        @include common_modal_container_active();
+        z-index: 501;
+        transition: all 0.3s ease;
+        .overlay {
+            @include common_overlay_active();
+            background: rgba($oc-gray-9, 0.4);
+        }
+        .form {
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            padding: 2em;
+            width: 300px;
+            > textarea {
+                padding: 0.4em;
+                outline: none;
+            }
+            z-index: 1;
+        }
+    }
+}

@@ -1,8 +1,61 @@
 @import '~open-color/open-color';
 @import '~include-media/dist/include-media';
+
+$breakpoints: (
+  ex-small: 450px,
+  small: 650px, 
+  medium: 850px, 
+  large: 1024px, 
+  huge: 1200px
+);
 @mixin moviedetail_con() {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-$image1: 'https://firebasestorage.googleapis.com/v0/b/moviefetch2.appspot.com/o/night-television-tv-theme-machines.jpg?alt=media&token=8e7f657c-948b-4033-a2f7-ecd557e46b88';
+@mixin search_Input() {
+        background: transparent;
+        border: none;
+        border-bottom: 0.1px solid $oc-pink-6;
+        color: $oc-gray-0;
+        display: inline-block;
+        font-size: 25px;
+        padding: 0.1em;
+        outline: none;
+        transition: all 0.3s ease-out;
+        &:focus {
+            border-bottom: 2px solid $oc-pink-9;
+            transform: scale(1.2, 1.2);
+        }
+        @include media('<medium') {
+            font-size: 15px;
+            &:focus {
+                border-bottom: 1px solid $oc-pink-6;
+            }
+        }
+        @include media('<small') {
+            font-size: 13px;
+        }
+}
+@mixin common_modal_container() {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 0;
+    height: 0;  
+}
+@mixin common_modal_container_active() {
+    width: 100vw;
+    height: 100vh;
+}
+@mixin common_overlay() {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top:0;
+    left:0;
+}
+@mixin common_overlay_active() {
+    width: 100vw;
+    height: 100vh;
+}

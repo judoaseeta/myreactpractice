@@ -21,7 +21,7 @@ const Button = (
             blue: isBlue,
             green: isGreen,
             lime: isLime,
-            red: isRed
+            red: isRed,
         })}
         onClick={onClick ? onClick : null}
         style={styles? styles : null}

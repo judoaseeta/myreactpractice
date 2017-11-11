@@ -1,0 +1,19 @@
+@import 'utils';
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: -20%;
+    }
+    input {
+        @include search_Input();
+        color: $oc-gray-8;
+    }
+}

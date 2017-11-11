@@ -16,5 +16,13 @@
                 text-decoration: underline;
             }
         }
-    }    
+        @include media('<huge') {
+            p {
+                font-size: 12px;
+            }
+            .seeDetail {
+                font-size: 10px;
+            }
+        }
+    }
 }

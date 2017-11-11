@@ -1,6 +1,6 @@
 import React from 'react';
 import { Motion, spring } from 'react-motion';
-const MovieDetailImage = ({Poster}) => (
+const MovieDetailImage = ({Poster, onClick}) => (
     <Motion
         defaultStyle={{x: 0, y: 0}}
         style={
@@ -14,9 +14,15 @@ const MovieDetailImage = ({Poster}) => (
             })
         }}
     >
-    {(style) => <img style={{
-        transform: `scale(${style.x}, ${style.y})`
-    }} src={Poster} alt="Poster" />}
+    {(style) => <img 
+            style={{
+                transform: `scale(${style.x}, ${style.y})`
+            }} 
+            src={Poster} 
+            alt="Poster" 
+            onClick={() => onClick()}
+        />
+    }
     </Motion>
 );
 export default MovieDetailImage;

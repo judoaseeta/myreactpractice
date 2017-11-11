@@ -1,0 +1,23 @@
+@import 'utils';
+.container {
+    background-image: url('../img/auth.jpeg');
+    background-size: cover;
+    background-position: top;
+    width: 100%;
+    height: calc(100vh - 0.2em);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .form {
+        background: rgba($oc-gray-0, 0.7);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        padding: 0.4em;
+        width: 380px;
+        > h3 {
+            color: $oc-gray-9;
+            margin-left: 20px;
+        }
+    }
+}

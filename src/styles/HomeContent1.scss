@@ -1,6 +1,6 @@
 @import 'utils';
 .container {
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/moviefetch2.appspot.com/o/night-television-tv-theme-machines.jpg?alt=media&token=8e7f657c-948b-4033-a2f7-ecd557e46b88');
+    background-image: url('../img/home.jpg');
     background-size: cover;
     background-position: top;
     width: 100%;
@@ -15,6 +15,15 @@
     #content1{
         color: white;
         font-size: 80px;
+        @include media('<large') {
+            font-size: 60px;
+        }
+        @include media('<medium') {
+            font-size: 40px;
+        }
+        @include media('<small') {
+            font-size: 25px;
+        }
     }
 }
 .overlay {

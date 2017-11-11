@@ -1,0 +1,26 @@
+@import 'utils';
+.container {
+    @include common_modal_container();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .overlay {
+        @include common_overlay();
+    }
+    > img {
+        width: 0;
+    }
+    &.active {
+        z-index: 501;
+        @include common_modal_container_active();
+        .overlay {
+            @include common_overlay_active();
+            background-color: $oc-gray-9;
+            cursor: zoom-out;
+        }
+        > img {
+            z-index: 50;
+            width: auto;
+        }
+    }
+}

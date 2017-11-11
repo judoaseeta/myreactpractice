@@ -1,24 +1,28 @@
 @import 'utils';
 .review {
-    background: linear-gradient(to right, $oc-gray-1, $oc-gray-0);
+    background: linear-gradient(to right, $oc-gray-4, $oc-gray-3);
+    border-left: 10px solid $oc-green-7;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     display: flex;
     flex-direction: column;
     padding: 0.3em;
     margin-bottom: 0.2em;
-    &:before {
-        content: '';
-        position: absolute;
-        top:0;
-        left:0;
-        border-left-color: $oc-green-5;
-        border-left-width: 5px;
-        width: 5px;
+    &.users {
+        border-left-color: $oc-blue-8;
     }
     .cancel {
         font-size: 13px;
         color: $oc-red-7;
+        cursor: pointer;
+        margin-right: 0.2em;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .delete {
+        font-size: 13px;
+        color: $oc-red-9;
         cursor: pointer;
         margin-right: 0.2em;
         &:hover {
@@ -44,14 +48,9 @@
         align-items: center;
         justify-content: flex-end;
     }
-    p {
-        color: $oc-gray-7;
+    .para, .email {
+        color: $oc-gray-9;
         font-size: 11px;
         display: inline-block
-    }
-    textarea {
-        background: transparent;
-        outline: none;
-        border: none;
     }
 }

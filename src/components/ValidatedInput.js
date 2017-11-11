@@ -12,7 +12,7 @@ const ValidatedInput = (props) => {
             >
                 <p
                     className={cx('placeholder')}
-                >{props.placeholder}</p>
+                >{props._placeholder}</p>
                 <input
                     className={cx('inputfield')}
                     onChange={props.onChange}

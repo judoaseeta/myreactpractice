@@ -1,73 +1,168 @@
 import React from 'react';
-import { Motion, spring } from 'react-motion';
+import Modal from './Modal';
+import MovieDetailBigImage from './MovieDetailBigImage';
+import MovieDetailForm from './MovieDetailForm';
+import MovieDetailGenre from './MovieDetailGenre';
 import MovieDetailImage from './MovieDetailImage';
 import MovieDetailRating from './MovieDetailRating';
 import MovieDetailTop from './MovieDetailTop';
 import MovieDetailPlot from './MovieDetailPlot';
+import Reviews from './Reviews';
 import styles from '../styles/MovieDetail.scss';
 import classNames from 'classnames/bind';
-import mockData from './__test__/mockMovieDetail';
 const cx = classNames.bind(styles);
-const MovieDetail = (props) => (
+const MovieDetail = ({
+    content, 
+    detail, 
+    deleteReview,
+    reviews, 
+    isEditing, 
+    isShowingImage,
+    history,
+    rating, 
+    userUid, 
+    userReviewId,
+    toggleEdit,
+    toggleImage,
+    setRate, 
+    setContent,
+    submit
+    }) => (
     <div
-        className={cx('container')}
+        className={cx('outer')}
     >
-        <div
-            className={cx('panel_top')}
+        <Modal
         >
-            <MovieDetailTop
-                Director={mockData.Director} 
-                Title={mockData.Title}
-                Year={2016}
-            />        
-        </div>
-        <div
-            className={cx('plot')}
-        >
-            <MovieDetailPlot 
-                Plot={mockData.Plot}
+            <MovieDetailForm 
+                content={content}
+                isEditing={isEditing}
+                setRate={setRate}
+                setContent={setContent}
+                rating={rating}
+                submit={submit}
+                toggleEdit={toggleEdit}
             />
-        </div>
-        <div
-            className={cx('image')}
-        >
-            <MovieDetailImage 
-                Poster={mockData.Poster}
+        </Modal>
+        <Modal>
+            <MovieDetailBigImage 
+                id={detail ? detail.imdbID : ''}
+                isShowingImage={isShowingImage}
+                toggleImage={toggleImage}
             />
-        </div>
-        <div
-        className={cx('actors')}
-        >Actors
-        </div>
-        <div
-        className={cx('rating')}
-        >
-            <MovieDetailRating
-                imdbRating={mockData.imdbRating}
-                Metascore={mockData.Metascore}
-                Ratings={mockData.Ratings}
-            />
-        </div>
-        <div
-            className={cx('replies')}
-        >Replies
-        </div>
-        <div
-            className={cx('reply_form')}
-        >Reply_form
-        </div>
-        <div
-            className={cx('box')}
-            >H
-        </div>
-        <div
-            className={cx('box')}
-        >H
-        </div>
-        <div
-            className={cx('box')}
-        >H
-        </div>
+        </Modal>
+        {
+            detail 
+            ?   <div
+                    className={cx('container')}
+            >
+                <div
+                    className={cx('panel_top')}
+                >
+                    <MovieDetailTop
+                        history={history}
+                        Title={detail.Title}
+                        Year={Number(detail.Year)}
+                    />        
+                </div>
+                <div
+                    className={cx('plot')}
+                >
+                    {
+                        detail.Plot 
+                    ? <MovieDetailPlot 
+                        Plot={detail.Plot}
+                    />
+                    : null
+                    }
+                </div>
+                <div
+                    className={cx('image')}
+                >
+                    <MovieDetailImage 
+                        Poster={detail.Poster}
+                        onClick={toggleImage}
+                    />
+                </div>
+                <div
+                    className={cx('actors')}
+                >
+                    <h4>Actors</h4>
+                    {
+                        Array.isArray(detail.Actors)
+                        ? detail.Actors.split(',').map(actor => <p key={actor}>{actor}</p>)
+                        : <p>{detail.Actors}</p>
+                    }
+                </div>
+                <div
+                    className={cx('genre')}
+                >
+                    {
+                        detail.Genre
+                        ? <MovieDetailGenre 
+                            Genre={detail.Genre}
+                        />
+                        : null
+                    }  
+                </div>
+                <div
+                    className={cx('rating')}
+                >
+                    {
+                        detail.Ratings
+                        ? <MovieDetailRating
+                            imdbRating={detail.imdbRating}
+                            Metascore={detail.Metascore}
+                            Ratings={detail.Ratings}
+                        />
+                        : null
+                    }
+                </div>
+                <div
+                    className={cx('reviews')}
+                >
+                    {
+                        reviews && !userReviewId 
+                        ? <div
+                            className={styles.noUserReview}
+                        >
+                            <p>How about writing your first review of <br/> <span id={styles.innerTitle}>{detail.Title}</span>?</p>
+                            <span
+                                id={styles.addReview}
+                                onClick={() => toggleEdit()}
+                            >Write your review</span>
+                        </div>
+                        : null
+                    }
+                    {
+                        reviews && reviews.length > 0 
+                        ? <Reviews 
+                            deleteReview={deleteReview}
+                            title={detail.Title}
+                            reviews={reviews}
+                            userUid={userUid}
+                            toggleEdit={toggleEdit}
+                        />
+                        : userUid
+                            ? <div
+                                className={styles.noreview}
+                            >
+                                <p>There is no review yet!</p>
+                                <p>How about writing the first review of <br/> <span id={styles.innerTitle}>{detail.Title}</span>?</p>
+                                <span
+                                    id={styles.addReview}
+                                    onClick={() => toggleEdit()}
+                                >Write new review</span>
+                            </div>
+                            : <div
+                                className={styles.noreview}
+                            >
+                                <p>To write review, you need to signIn</p>
+                            </div>
+                    }
+                </div>
+            </div>
+        : null
+        }
     </div>
 );
 export default MovieDetail;

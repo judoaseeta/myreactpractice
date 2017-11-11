@@ -1,15 +1,13 @@
 @import 'utils';
 .container {
     @include moviedetail_con();
-    h5 {
-        margin-bottom: 0.2em;
-    }
     p {
-        font-size: 15px;
+        color: $oc-gray-0;
+        font-size: 14px;
         margin-bottom: 0.2em;
     }
     span {
-        font-size: 25px;
+        font-size: 20px;
     }
     #tomato {
         color: $oc-red-9;  
@@ -19,5 +17,26 @@
     }
     #metac {
         color: $oc-green-9;
+    }
+    @include media('<huge') {
+        span {
+            font-size: 17px;
+        }
+    }
+    @include media('<large') {
+        span {
+            font-size: 15px;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+    @include media('<small') {
+        span {
+            font-size: 12px;
+        }
+        p {
+            font-size: 10px;
+        }
     }
 }

@@ -9,10 +9,24 @@
     height: 30px;
     border-radius: 50%;
     position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 10;
+    top: 10px;
+    left: 10px;
     transition: all 0.4s ease-in;
+    z-index: 500;
+    @include media('<huge') {
+        width: 24px;
+        height: 24px;
+        .middle {
+            width: 12px;
+            height: 12px;
+            border-width: 0.8px;
+        }
+        .inner {
+            width: 7px;
+            height: 7px;
+            border-width: 0.5px;
+        }
+    }
     .middle {
         cursor: inherit;
         display: flex;
@@ -40,5 +54,8 @@
         .inner {
             background-color: $oc-orange-6;
         }
+    }
+    &.deactive {
+        display: none;
     }
 }

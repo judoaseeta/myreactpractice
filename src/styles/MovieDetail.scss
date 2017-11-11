@@ -1,65 +1,203 @@
 @import 'utils';
-.container {
-    background: linear-gradient(to bottom, $oc-gray-4, $oc-gray-3);
-    display: grid;
-    max-width: 100%;
-    min-height: 100vh;
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: 50px repeat(8, 1fr);
-    grid-row-gap: 0.1em;
-    grid-column-gap: 0.1em;
-    .actors {
-        grid-row-start: 4;
-        grid-row-end: 6;
-        grid-column-start: 4;
-        grid-column-end: 6;
+.outer {
+    display: flex;
+    justify-content: center;
+    background-image: url('../img/detail.jpg');
+    background-size: cover;
+    background-position: top;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    h4 {
+        text-decoration: underline;
+        color: $oc-gray-1;
+        font-size: 16px;
     }
-    .plot {
-        border-right: 0.1px $oc-gray-6 solid;
-        grid-column-start: 1;
-        grid-column-end: 4;
-        grid-row-start: 7;
-        grid-row-end: 10;
+    p {
+        color: $oc-gray-0;
+        font-size: 12px;
     }
-    .box {
-        background-color: red;
+    @include media('<large') {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left : 15px;
+        padding-right: 15px;
     }
-    .panel_top {
-        border-bottom: 0.1px $oc-gray-6 solid;
-        display: flex;
-        grid-column-start: 1;
-        grid-column-end: 10;
-        align-items: center;
+    @include media('<medium') {
+        background: linear-gradient(to bottom, $oc-gray-3, $oc-gray-2);
     }
-    .rating {
-        color: $oc-gray-9;
-        grid-row-start: 2;
-        grid-row-end: 4;
-        grid-column-start: 4;
-        grid-column-end: 6;
-        border-bottom: 0.1px $oc-gray-6 solid;
+    .container {
+        background-color: rgba($oc-gray-8, 0.7);
+        display: grid;
+        max-width: 1000px;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 50px repeat(3, 1fr);
+        grid-row-gap: 0.1em;
+        grid-column-gap: 0.1em;
+        @include media('<large') {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 40px repeat(4, 1fr);
+        }
+        @include media('<medium') {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 30px repeat(6, 1fr);
+        }
+        @include media('<small') {
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: 30px repeat(7, 1fr);
+        }
+        .actors {
+            border-bottom: 0.1px $oc-gray-6 solid;
+            border-right: 0.1px $oc-gray-6 solid;
+            text-align:center;
+            grid-area: 4/3/5/4;
+            overflow-y: scroll;
+            @include media('<large') {
+                grid-area: 4/5/5/6;
+            }
+            @include media('<medium') {
+                grid-area: 4 / 3 /5/ 4;
+            }
+            @include media('<small') {
+                grid-area: 7/3/8/4;
+            }
+        }
+        .plot {
+            border-bottom: 0.1px $oc-gray-6 solid;
+            border-right: 0.1px $oc-gray-6 solid;
+            grid-area: 4 / 1/ 5/ 3;
+            @include media('<large') {
+                grid-row-start: 4;
+                grid-row-end: 5;
+            }
+            @include media('<medium') {
+                grid-area: 4 / 1 /5/ 3;
+            }
+            @include media('<small') {
+                grid-column-end: 3;
+            }
+        }
+        .panel_top {
+            border-bottom: 0.1px $oc-gray-6 solid;
+            display: flex;
+            grid-column-start: 1;
+            grid-column-end: 7;
+        }
+        .genre {
+            color: $oc-gray-9;
+            grid-area: 2/3/3/4;
+            border-bottom: 0.1px $oc-gray-6 solid;
+            @include media('<large') {
+                grid-area: 4/4/5/5;
+                border-right: 0.1px $oc-gray-6 solid;
+            }
+            @include media('<medium') {
+                grid-area: 3/3/4/4;
+            }
+            @include media('<small') {
+                grid-area: 7/2/8/3;
+            }
+        }
+        .rating {
+            color: $oc-gray-9;
+            grid-area: 3/3/4/4;
+            border-bottom: 0.1px $oc-gray-6 solid;
+            @include media('<large') {
+                grid-area: 4/ 3/ 5 /4;
+                border-bottom: 0.1px $oc-gray-6 solid;
+                border-right: 0.1px $oc-gray-6 solid;
+            }
+            @include media('<medium') {
+                grid-area: 2 /3 / 3/ 4;
+            }
+            @include media('<small') {
+                grid-area: 7/1/8/2;
+            }
+        }
+        .reviews {
+            border-bottom: 0.1px $oc-gray-6 solid;
+            border-left: 0.1px $oc-gray-6 solid;
+            grid-area: 2/4/4/7;
+            overflow-y: scroll;
+            @include media('<large') {
+                border-left: none;
+                grid-column: 3/6;
+            }
+            @include media('<medium') {
+                grid-area: 5/1/7/4;
+            }
+            @include media('<small') {
+            }
+        }
+        .image {
+            border-bottom: 0.1px $oc-gray-6 solid;
+            border-right: 0.1px $oc-gray-6 solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-area: 2/1/4/3;
+            > img {
+                cursor: zoom-in;
+                width: 270px;
+                height: 406px;
+            }
+            @include media('<medium') {
+                grid-area: 2/1/4/3;
+                > img {
+                    width: 220px;
+                    height: 340px;
+                }
+            }
+            @include media('<small') {
+                grid-area: 2/1/4/3;
+            }
+        }
     }
-    .replies {
-        grid-row-start: 2;
-        grid-row-end: 7; 
-        grid-column-start: 6;
-        grid-column-end: 10;
+}
+.noreview {
+    height: 100%;
+    border: 0.1px solid $oc-gray-2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    > p {
+        font-size: 14px;
+        color: $oc-gray-1;
     }
-    .reply_form {
-        background-color: gray;
-        grid-row-start: 7;
-        grid-row-end: 9; 
-        grid-column-start: 10;
-        grid-column-end: 6;
+    #addReview {
+        font-size: 16px;
+        color: $oc-gray-0;
+        cursor: pointer;
+        text-decoration: underline;
     }
-    .image {
-        border-right: 0.1px $oc-gray-6 solid;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        grid-row-start: 2;
-        grid-row-end: 7;
-        grid-column-start: 1;
-        grid-column-end: 4;
+    #innerTitle {
+        font-size: 15px;
+        font-style: italic;
+        font-weight: 600;
+    }
+}
+.noUserReview {
+    height: 100px;
+    border: 0.1px solid $oc-gray-2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    > p {
+        font-size: 14px;
+        color: $oc-gray-1;
+    }
+    #addReview {
+        font-size: 16px;
+        color: $oc-gray-0;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    #innerTitle {
+        font-size: 15px;
+        font-style: italic;
+        font-weight: 600;
     }
 }

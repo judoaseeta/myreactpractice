@@ -1,8 +1,18 @@
 @import 'utils';
 .container {
     @include moviedetail_con();
-    padding: 0.3em;
+    padding: 0.5em;
+    @include media('<large') {
+        padding: 0.2em;
+    }
     p {
-        color: $oc-gray-8;
+        color: $oc-gray-0;
+        font-size: 13px;
+        @include media('<huge') {
+            font-size: 12px;
+        }
+        @include media('<large') {
+            font-size: 11px;
+        }
     }
 }

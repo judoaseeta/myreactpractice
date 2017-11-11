@@ -1,0 +1,25 @@
+@import 'utils';
+.container {
+    margin-top: -200px;
+    text-align: center;
+    h4 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 12px;
+    }
+    input {
+        @include search_Input();
+        width: 160px;
+        color: $oc-gray-8;
+    }
+    @include media('<small') {
+        margin-top: 0;
+        h4 {
+            font-size: 15px;
+        }
+        p {
+            font-size: 10px;
+        }
+    }
+}
