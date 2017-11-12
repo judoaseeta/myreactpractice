@@ -11,4 +11,4 @@ This is my portfolio app showing my ability
 - Renderprops(render function as children in react.)
 - new React 16 feature. (Portal)
 - composed React container with recompose.
-
+- some animations skill with React-Motion, React-Transition-group, native way.
