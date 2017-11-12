@@ -15,6 +15,7 @@ const Reviews = ({deleteReview, toggleEdit, title, reviews, userUid}) => (
             exit={true}
         >
             {
+                reviews && 
                 reviews.map((review) => (
                     <Slide
                         key={review.reviewId}

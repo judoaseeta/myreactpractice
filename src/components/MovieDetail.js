@@ -43,20 +43,6 @@ const ReviewAddCompo = ({reviews, userReviewId, userUid, Title, toggleEdit}) => 
     }
     return null;
 }
-const ReviewCompo = ({detail, deleteReview, reviews, userReviewId, userUid, toggleEdit}) => {
-    if(reviews && reviews.length > 0 ) {
-        return (
-                <Reviews 
-                    deleteReview={deleteReview}
-                    title={detail.Title}
-                    reviews={reviews}
-                    userUid={userUid}
-                    toggleEdit={toggleEdit}
-                />
-        )
-    }
-    return null;
-}
 const MovieDetail = ({
     content, 
     detail, 
@@ -173,11 +159,10 @@ const MovieDetail = ({
                         toggleEdit={toggleEdit}
                         Title={detail.Title}
                     />
-                    <ReviewCompo 
-                        detail={detail}
+                    <Reviews 
                         deleteReview={deleteReview}
-                        reviews={reviews}
-                        userReviewId={userReviewId}
+                        title={detail.Title}
+                        reviews={reviews ? reviews : null}
                         userUid={userUid}
                         toggleEdit={toggleEdit}
                     />

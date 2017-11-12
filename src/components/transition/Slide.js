@@ -6,6 +6,8 @@ const cx = classNames.bind(styles);
 const Slide = ({children, ...props}) => (
     <CSSTransition
         classNames={{
+            appear: cx('slide-appear'),
+            appearActive: cx('slide-appear-active'),
             enter: cx('slide-enter'),
             enterActive: cx('slide-enter-active'),
             exit: cx('slide-exit'),

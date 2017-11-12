@@ -19,7 +19,12 @@
     opacity: 0.5;
     transition: opacity 1800ms ease-out;
 }
-
+.slide-appear {
+    transform: translateY(-100%);
+}
+.slide-appear-active {
+    animation: slide-in2 500ms ease-in forwards;
+}
 .slide-enter {
     transform: translateX(-100%);
 }
@@ -38,6 +43,14 @@
     }
     to {
         transform: translateX(0%);
+    }
+}
+@keyframes slide-in2 {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0%);
     }
 }
 @keyframes slide-out {
