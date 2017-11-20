@@ -35,7 +35,7 @@ const MobileListItem = ({movie, MovieById}) => (
         </div>
     </div>
 );
-const MobileMovieListRight = ({movies, MovieById}) => (
+const MobileMovieListRight = ({setIndex, movies, MovieById}) => (
     <div
         className={styles.list}
     >
@@ -50,6 +50,7 @@ const MobileMovieListRight = ({movies, MovieById}) => (
         }
         <button
             id={styles.fetch}
+            onClick={() => setIndex(movies.length - 1)}
         >Fetch More</button>        
     </div>
 );
