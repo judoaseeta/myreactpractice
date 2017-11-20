@@ -13,4 +13,4 @@ This is my portfolio app showing my ability
 - composed React container with recompose.
 - some animations skill with React-Motion, React-Transition-group, native way.
 # Demo 
-http://moviefetch2.surge.sh/
+http://moviefetch2-1.surge.sh/
