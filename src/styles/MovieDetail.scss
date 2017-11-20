@@ -43,7 +43,7 @@
         }
         @include media('<small') {
             grid-template-columns: repeat(3,1fr);
-            grid-template-rows: 30px repeat(7, 1fr);
+            grid-template-rows: 30px repeat(5, 1fr);
         }
         .actors {
             border-bottom: 0.1px $oc-gray-6 solid;
@@ -56,9 +56,6 @@
             }
             @include media('<medium') {
                 grid-area: 4 / 3 /5/ 4;
-            }
-            @include media('<small') {
-                grid-area: 7/3/8/4;
             }
         }
         .plot {
@@ -93,9 +90,6 @@
             @include media('<medium') {
                 grid-area: 3/3/4/4;
             }
-            @include media('<small') {
-                grid-area: 7/2/8/3;
-            }
         }
         .rating {
             color: $oc-gray-9;
@@ -109,9 +103,6 @@
             @include media('<medium') {
                 grid-area: 2 /3 / 3/ 4;
             }
-            @include media('<small') {
-                grid-area: 7/1/8/2;
-            }
         }
         .reviews {
             border-bottom: 0.1px $oc-gray-6 solid;
@@ -124,8 +115,6 @@
             }
             @include media('<medium') {
                 grid-area: 5/1/7/4;
-            }
-            @include media('<small') {
             }
         }
         .image {
