@@ -1,5 +1,7 @@
 import React from 'react';
 import { Motion, spring } from 'react-motion';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faArrowCircleLeft } from '@fortawesome/fontawesome-free-solid';
 import styles from '../styles/MovieDetailTop.scss'; 
 const MovieDetailTop = ({history, Title, Year}) => {
     const initialYear = Year > 2000 ? 1970 : new Date().getFullYear();
@@ -7,9 +9,11 @@ const MovieDetailTop = ({history, Title, Year}) => {
         <div
             className={styles.container}
         >
-            <span id={styles.back}
+            <FontAwesomeIcon 
+                className={styles.back}
+                icon={faArrowCircleLeft} 
                 onClick={() => history.goBack()}
-            >⬅</span> 
+            />
             <Motion
                 defaultStyle={{
                     year: initialYear

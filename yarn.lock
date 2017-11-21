@@ -49,6 +49,20 @@
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.2.3.tgz#e94f7e772f40e48a2dc52e57d1df38b28bf98e39"
 
+"@fortawesome/fontawesome-free-solid@^0.0.17":
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free-solid/-/fontawesome-free-solid-0.0.17.tgz#fe9ae40dc79193a3dc0735fca0023f4882e57535"
+
+"@fortawesome/fontawesome@^0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome/-/fontawesome-0.0.21.tgz#282cea251c730aedace61e5a74021b90c584622e"
+
+"@fortawesome/react-fontawesome@^0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.0.12.tgz#26ee9227b36b8eb814ac7c1783e5c3a25c3946b0"
+  dependencies:
+    humps "^2.0.1"
+
 "@types/node@^6.0.46":
   version "6.0.89"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.89.tgz#154be0e6a823760cd6083aa8c48f952e2e63e0b0"
@@ -3378,6 +3392,10 @@ https-browserify@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-0.0.1.tgz#3f91365cabe60b77ed0ebba24b454e3e09d95a82"
 
+humps@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/humps/-/humps-2.0.1.tgz#dd02ea6081bd0568dc5d073184463957ba9ef9aa"
+
 iconv-lite@0.4.13:
   version "0.4.13"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.13.tgz#1f88aba4ab0b1508e8312acc39345f36e992e2f2"
@@ -5742,14 +5760,6 @@ react-rater-plus@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/react-rater-plus/-/react-rater-plus-0.2.0.tgz#20f7ea7527525410ae410c6c43e9441b31e07351"
 
-react-rater@^0.4.5:
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/react-rater/-/react-rater-0.4.5.tgz#37830697816fb845c9d3f49e4494ac35f8cbe95d"
-  dependencies:
-    prop-types "^15.5.10"
-    react "^16.0.0"
-    react-dom "^16.0.0"
-
 react-redux@^5.0.6:
   version "5.0.6"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.6.tgz#23ed3a4f986359d68b5212eaaa681e60d6574946"
@@ -5926,12 +5936,6 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
-redux-saga-firebase@0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/redux-saga-firebase/-/redux-saga-firebase-0.6.1.tgz#e16b1001bef40ed9a5aa2c0ade179aefcac3196f"
-  dependencies:
-    redux-saga "^0.15.4"
-
 redux-saga-test-plan@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/redux-saga-test-plan/-/redux-saga-test-plan-3.2.0.tgz#26cc3ad34af08e4498954b397500ef7f00285ab3"
@@ -5944,10 +5948,6 @@ redux-saga-test-plan@^3.2.0:
     lodash.ismatch "^4.4.0"
     object-assign "^4.1.0"
     util-inspect "^0.1.8"
-
-redux-saga@^0.15.4:
-  version "0.15.6"
-  resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.15.6.tgz#8638dc522de6c6c0a496fe8b2b5466287ac2dc4d"
 
 redux-saga@^0.16.0:
   version "0.16.0"

@@ -4,7 +4,7 @@ import MobileMovieListRight from './MobileMovieListRight';
 import classnames from 'classnames/bind';
 import styles from '../styles/MobileMovieList.scss';
 const cx = classnames.bind(styles);
-const MobileMovieList = ({currentListLength, keyword, movies, MovieById, totalNum, setKeyword, submitKeyword}) => (
+const MobileMovieList = ({currentListLength, keyword, movies, MovieById, totalNum, setIndex, setKeyword, submitKeyword}) => (
     <div
         className={cx('container')}
     >
@@ -28,6 +28,7 @@ const MobileMovieList = ({currentListLength, keyword, movies, MovieById, totalNu
                 {
                     movies 
                     ? <MobileMovieListRight 
+                        setIndex={setIndex}
                         movies={movies}
                         MovieById={MovieById}
                     />

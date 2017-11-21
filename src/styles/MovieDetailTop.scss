@@ -4,10 +4,11 @@
     justify-content: space-between;
     align-items: center;
     padding-left: 0.5em;
-    #back {
+    .back {
         color: $oc-gray-2;
         font-size: 25px;
         cursor: pointer;
+        margin-right: 0.7em;
         &:hover {
             opacity: 0.7;
         }
@@ -22,7 +23,7 @@
             font-size: 17px;
             font-weight: none;
         }
-        #back {
+        .back {
             font-size: 17px;
         }   
     }
@@ -31,7 +32,7 @@
             font-size: 14px;
             font-weight: none;
         }
-        #back {
+        .back {
             font-size: 14px;
         }   
     }
@@ -40,7 +41,7 @@
             font-size: 12px;
             font-weight: none;
         }
-        #back {
+        .back {
             font-size: 12px;
         }   
     }

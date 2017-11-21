@@ -56,6 +56,7 @@ const MovieListCompo =
             movies={Movies ? Movies : null}
             MovieById={MovieById}
             setKeyword={setKeyword}
+            setIndex={setIndex}
             submitKeyword={submitKeyword}
             totalNum={TotalNum? TotalNum : null}
         />
